@@ -1,14 +1,14 @@
 import React, { useRef, useEffect } from 'react'
 import { extend, useThree, useFrame } from '@react-three/fiber'
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
-import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass'
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
-import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass'
-import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass'
+import { EffectComposer } from 'three/examples/jsm/Addons.js'
+import { ShaderPass } from 'three/examples/jsm/Addons.js'
+import { RenderPass } from 'three/examples/jsm/Addons.js'
+import { UnrealBloomPass } from 'three/examples/jsm/Addons.js'
+import { FilmPass } from 'three/examples/jsm/Addons.js'
 
 extend({ EffectComposer, ShaderPass, RenderPass, UnrealBloomPass, FilmPass })
 
-export default function Effects() {
+export default function Efek() {
   const composer = useRef()
   const { scene, gl, size, camera } = useThree()
   useEffect(() => void composer.current.setSize(size.width, size.height), [size])
