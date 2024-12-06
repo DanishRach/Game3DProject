@@ -24,11 +24,8 @@ export default function Hud() {
         {sound ? 'off' : 'on'}
       </UpperLeft>
       <UpperRight>
-        <a href="https://codesandbox.io/s/react-three-fiber-untitled-game-4pp5r">source</a>
         <br />
-        <a href="https://twitter.com/0xca0a">twitter</a>
-        <br />
-        <a href="https://github.com/react-spring/react-three-fiber">github</a>
+        <a href="">github</a>
       </UpperRight>
       <LowerLeft>
         <h2 ref={seconds}>0.0</h2>
