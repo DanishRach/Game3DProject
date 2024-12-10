@@ -1,31 +1,45 @@
-import React, { useMemo, useRef, useEffect } from 'react'
-import styled, { css, createGlobalStyle } from 'styled-components'
-import useStore from './store'
+import React, { useMemo, useRef, useEffect } from "react";
+import styled, { css, createGlobalStyle } from "styled-components";
+import useStore from "./store";
 
 export default function Hud() {
-  const points = useStore((state) => state.points)
-  const health = useStore((state) => state.health)
-  const sound = useStore((state) => state.sound)
-  const toggle = useStore((state) => state.actions.toggleSound)
+  const points = useStore((state) => state.points);
+  const health = useStore((state) => state.health);
+  const sound = useStore((state) => state.sound);
+  const toggle = useStore((state) => state.actions.toggleSound);
 
-  const seconds = useRef()
+  const seconds = useRef();
   useEffect(() => {
-    const t = Date.now()
-    const i = setInterval(() => (seconds.current.innerText = ((Date.now() - t) / 1000).toFixed(1)), 100)
-    return () => clearInterval(i)
-  }, [])
+    const t = Date.now();
+    const i = setInterval(
+      () => (seconds.current.innerText = ((Date.now() - t) / 1000).toFixed(1)),
+      100
+    );
+    return () => clearInterval(i);
+  }, []);
 
-  const score = useMemo(() => (points >= 1000 ? (points / 1000).toFixed(1) + 'K' : points), [points])
+  const score = useMemo(
+    () => (points >= 1000 ? (points / 1000).toFixed(1) + "K" : points),
+    [points]
+  );
   return (
     <>
       <UpperLeft onClick={() => toggle()}>
         sound
         <br />
-        {sound ? 'off' : 'on'}
+        {sound ? "off" : "on"}
       </UpperLeft>
       <UpperRight>
         <br />
-        <a href="">github</a>
+        <a href="https://github.com/DanishRach">Home</a>
+        <br />
+        <a href="https://github.com/DanishRach">About</a>
+        <br />
+        <a href="https://github.com/DanishRach">github</a>
+        <br />
+        <a href="https://www.linkedin.com/in/danish-rachman?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+          Linkedin
+        </a>
       </UpperRight>
       <LowerLeft>
         <h2 ref={seconds}>0.0</h2>
@@ -33,14 +47,14 @@ export default function Hud() {
       </LowerLeft>
       <Global />
       <LowerRight>
-        <div style={{ width: health + '%' }} />
+        <div style={{ width: health + "%" }} />
       </LowerRight>
     </>
-  )
+  );
 }
 
 const base = css`
-  font-family: 'Teko', sans-serif;
+  font-family: "Teko", sans-serif;
   position: absolute;
   text-transform: uppercase;
   font-weight: 900;
@@ -48,7 +62,7 @@ const base = css`
   line-height: 1em;
   pointer-events: none;
   color: indianred;
-`
+`;
 
 const UpperLeft = styled.div`
   ${base}
@@ -61,7 +75,7 @@ const UpperLeft = styled.div`
   @media only screen and (max-width: 900px) {
     font-size: 1.5em;
   }
-`
+`;
 
 const UpperRight = styled.div`
   ${base}
@@ -79,7 +93,7 @@ const UpperRight = styled.div`
   @media only screen and (max-width: 900px) {
     font-size: 1.5em;
   }
-`
+`;
 
 const LowerLeft = styled.div`
   ${base}
@@ -106,7 +120,7 @@ const LowerLeft = styled.div`
       font-size: 3em !important;
     }
   }
-`
+`;
 
 const LowerRight = styled.div`
   ${base}
@@ -126,7 +140,7 @@ const LowerRight = styled.div`
     height: 40px;
     width: 150px;
   }
-`
+`;
 
 const Global = createGlobalStyle`
   * {
@@ -157,4 +171,4 @@ const Global = createGlobalStyle`
     color: black;
     background: white;
   }
-`
+`;
