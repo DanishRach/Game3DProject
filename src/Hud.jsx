@@ -31,13 +31,15 @@ export default function Hud() {
       </UpperLeft>
       <UpperRight>
         <br />
-        <a href="https://github.com/DanishRach">Home</a>
+        <a href="https://danish-rach-porto.vercel.app/">Home</a>
         <br />
-        <a href="https://github.com/DanishRach">About</a>
+        <a href="https://about-page-tawny.vercel.app/">About</a>
         <br />
-        <a href="https://github.com/DanishRach">github</a>
+        <a href="https://3d-project-page.vercel.app/">My Project</a>
         <br />
-        <a href="https://www.linkedin.com/in/danish-rachman?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+        <a target="_blank" href="https://github.com/DanishRach">github</a>
+        <br />
+        <a target="_blank" href="https://www.linkedin.com/in/danish-rachman?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
           Linkedin
         </a>
       </UpperRight>
